@@ -1,6 +1,8 @@
 import Header from './Header'
 import Footer from './Footer'
 import ExplorePage from '../pages/ExplorePage'
+import Register from '../pages/Register'
+
 import {
   BrowserRouter as Router,
   Route,
@@ -10,11 +12,12 @@ function App() {
 
   return (
     <Router>
-      <Header />
         <Routes>
+          <Route path={!"/register"} element={<Header />}/>
           <Route path="/"  element={<ExplorePage />}/>
+          <Route path="/register" element={<Register />}/>
+          <Route path={!"/register"} element={<Footer />}/>
         </Routes>
-      <Footer />
     </Router>  
     )
 }

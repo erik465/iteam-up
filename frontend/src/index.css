@@ -2,6 +2,7 @@
 
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 *{
@@ -81,8 +82,9 @@ footer{
     justify-content: space-around;
     text-decoration: none;
     color: rgb(143, 142, 142);
-    padding: 2%;
+    padding: 2% 0;
     font-size:2rem;
+    width: 100vw;
 }
 
 .footer--main{
@@ -154,6 +156,77 @@ footer a{
 hr{
     margin: 0;
 }
+
+
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+    padding-top:3%;
+    background: #d2895f;
+}
+
+.register--content{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register--content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 550px;
+    width: 100%;
+    background: #eee;
+    padding: 20px;
+    border-radius:20px;
+    margin-bottom: 16%;
+    margin-top: 5%;
+}
+
+.register--content input{
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition:1s;
+    padding: 10px;
+}
+
+.register--content input[type="submit"]{
+    background: #d2895f;
+    color: #eee;
+}
+
+.register--content input:hover{
+    box-shadow: 10px 10px 10px rgb(72, 71, 71);
+}
+
+.register--logo{
+    border-radius: 90px;
+    box-shadow: 10px 10px 10px #000;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    width: 20%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:1s;
+}
+
+.register--logo img{
+    height: 120px;
+    width: 120px;
+    transition:1s;
+}
+
+
+
 
 
 
