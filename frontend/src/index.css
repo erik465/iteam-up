@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&display=swap');
+
+body{
+    margin: 0;
+}
+
+*{
+    font-family: 'Oswald', sans-serif;
+}
+
+header{
+    background-color: #d2895f;
+    background-image: linear-gradient(62deg, #ff8640 10%, #de9c50 50%, #bba05d 75%, #edd087 100%);
+    height: 100px;
+    transition: 2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0px 30px;
+}
+
+.header--links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    color: #eee;
+    font-size: 2rem;
+}
+
+header:hover{
+    height:150px;
+}
+
+a{
+    transition:1s
+}
+
+.header--links a:hover{
+   letter-spacing:10px;
+   font-size: 3rem;  
+}
+
+.header--logo{
+    border-radius: 90px;
+    box-shadow: 10px 10px 10px #000;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    width: 5%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:1s;
+
+   
+}
+
+.header--logo--img{
+    height: 70px;
+    width: 70px;
+    transition:1s;
+}
+
+
+.header--logo:hover > .header--logo--img{
+    filter: invert(100%);
+}
+
+.header--logo:hover{
+    transform: scale(1.4)
+
+}
+
+
+footer{
+    background: rgb(60, 60, 60);
+}
+
+
+
