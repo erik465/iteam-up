@@ -76,6 +76,83 @@ a{
 
 footer{
     background: rgb(60, 60, 60);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-decoration: none;
+    color: rgb(143, 142, 142);
+    padding: 2%;
+    font-size:2rem;
+}
+
+.footer--main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer--links{
+    display:flex;
+    flex-direction: column;
+}
+
+.footer--contact{
+    display:flex;
+    flex-direction: column;
+}
+
+.footer--social{
+    width: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.footer--social a{
+    padding: 1%;
+    border-radius: 90px;
+    border: 0.5px solid #eee;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer--social p{
+    font-size:1rem;
+    margin: 0;
+    transition:1s;
+
+}
+
+.footer--social img{
+    height: 50px;
+    width: 50px;
+    transition: 1s;
+}
+
+
+.footer--social a:hover >  img{
+    filter: invert(100%);
+    transform:rotate(360deg)
+}
+
+.footer--social a:hover >  p{
+    font-size: 1.5rem;
+    color:#eee;
+}
+
+footer a{
+    text-decoration: none;
+    color:rgb(143, 142, 142);
+
+}
+
+hr{
+    margin: 0;
 }
 
 
