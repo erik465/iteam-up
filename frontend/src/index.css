@@ -98,6 +98,15 @@ footer{
     flex-direction: column;
 }
 
+.footer--links a{
+    transition: 0.5s;
+}
+
+.footer--links a:hover{
+    color: #eee;
+    transform: translateY(-10px);
+}
+
 .footer--contact{
     display:flex;
     flex-direction: column;
@@ -193,7 +202,7 @@ hr{
     border-radius: 5px;
     font-size: 2rem;
     margin-bottom: 20px;
-    transition:1s;
+    transition:0.5s;
     padding: 10px;
 }
 
@@ -211,18 +220,32 @@ hr{
     box-shadow: 10px 10px 10px #000;
     border-top: 1px solid #eee;
     border-left: 1px solid #eee;
-    width: 20%;
+    width: 25%;
     height: fit-content;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     transition:1s;
+}
+
+.register--logo h1{
+    margin: 0;
+    margin-bottom: 10px;
 }
 
 .register--logo img{
     height: 120px;
     width: 120px;
     transition:1s;
+}
+
+.error{
+    color: rgb(229, 45, 45);
+}
+
+.succes{
+    color: rgb(62, 134, 11);
 }
 
 

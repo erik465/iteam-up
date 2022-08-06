@@ -16,8 +16,8 @@ function App() {
           <Route path={!"/register"} element={<Header />}/>
           <Route path="/"  element={<ExplorePage />}/>
           <Route path="/register" element={<Register />}/>
-          <Route path={!"/register"} element={<Footer />}/>
         </Routes>
+        <Footer />
     </Router>  
     )
 }

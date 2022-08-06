@@ -7,7 +7,7 @@ function Footer() {
         <div className="footer--links">
           <a href="">Support me</a>
           <a href="">Information</a>
-          <a href="">GitHub Repo</a>
+          <a href="https://github.com/erik465/iteam-up">GitHub Repo</a>
        </div>
         <div className="footer--contact">
           <a href="mailto:ehalasz06@gmail.com">Work email : ehalasz06@gmail.com</a>

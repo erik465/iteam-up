@@ -14,7 +14,7 @@ function Header() {
         </div>    
 
         <div className="header--profile">
-            Profile will go here
+            <a href="/register">Register</a>
         </div>   
     </header>
   )
