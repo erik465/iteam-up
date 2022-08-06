@@ -1,6 +1,9 @@
 import React from 'react'
+import {useContext} from 'react'
+import AuthContext from '../context/AuthContext'
 
 function Header() {
+  let {name} = useContext(AuthContext)
   return (
     <header>
         <div className="header--logo">
@@ -14,8 +17,9 @@ function Header() {
         </div>    
 
         <div className="header--profile">
-            <a href="/register">Register</a>
+            <p>Welcome, {name}</p>
         </div>   
+        
     </header>
   )
 }
