@@ -1,6 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import {useNavigate} from 'react-router-dom'
+import AuthContext from '../context/AuthContext'
 
 
 function Register() {
@@ -13,7 +14,7 @@ function Register() {
   })
 
   const [error, setError] = useState('')
-
+  let {loginUser} = useContext(AuthContext)
 
   function validateForm(){
     if(userObj.username == ''){
@@ -62,6 +63,7 @@ function Register() {
         response = await response.json()
         setError(response.message)
         if(response.message === "Successful register!"){
+          loginUser(e)
           setTimeout(navigate("/"), 1000)          
         }
          

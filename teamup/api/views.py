@@ -4,7 +4,8 @@ from .serializers import PostSerializer, CurrentUserSerializer, GenericUserSeria
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 
@@ -25,16 +26,18 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 
 @api_view(['GET'])
-def apiView(request, *args, **kwargs):
+def apiView(request):
     return Response('API works')
 
 @api_view(['GET'])
+#@permission_classes([IsAuthenticated])
 def postView(request):
     posts = Post.objects.all()
     post_Serializer = PostSerializer(posts, many=True)
     return Response(post_Serializer.data)
 
 @api_view(['GET'])
+#@permission_classes([IsAuthenticated])
 def currentUserView(request):
     if(request.method == 'GET'):
         currentUser = request.user
@@ -43,6 +46,7 @@ def currentUserView(request):
     
 
 @api_view(['GET', 'POST'])
+#@permission_classes([IsAuthenticated])
 def usersView(request):
     if(request.method == 'GET'):
         users = User.objects.all()

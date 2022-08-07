@@ -2,6 +2,8 @@ import Header from './Header'
 import Footer from './Footer'
 import ExplorePage from '../pages/ExplorePage'
 import Register from '../pages/Register'
+import Login from '../pages/Login'
+import ProfilePage from '../pages/ProfilePage'
 import {useState, useEffect} from 'react'
 import PrivateRoute from '../utilities/PrivateRoute'
 import {AuthProvider} from '../context/AuthContext'
@@ -16,11 +18,13 @@ function App() {
 
   return (
     <Router>
-      <AuthProvider>
+      <AuthProvider>      
         <PrivateRoute path="/"  element={<ExplorePage />} exact/>
+        <Header />
         <Routes>
-          <Route path={!"/register"} element={<Header />}/>
+          <Route path="/:uid" element={<ProfilePage />}/>
           <Route path="/register" element={<Register />}/>
+          <Route path="/login" element={<Login /> }/>
         </Routes>
         <Footer />
       </AuthProvider>

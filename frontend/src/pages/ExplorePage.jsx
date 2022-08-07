@@ -2,8 +2,8 @@ import React from 'react'
 
 function ExplorePage() {
   return (
-    <div>
-      
+    <div className="explore">
+      Explore page
     </div>
   )
 }
