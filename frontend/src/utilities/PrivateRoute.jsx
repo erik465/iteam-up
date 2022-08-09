@@ -4,14 +4,19 @@ import {useContext} from 'react'
 import AuthContext from '../context/AuthContext'
 
 const PrivateRoute = ({children, ...rest}) => {
-    const isAuthenticated = false
+    let isAuthenticated = false
     let {user} = useContext(AuthContext)
+    let navigate = useNavigate()
+   
 
-    //useEffect(() =>{
-    //    if(!isAuthenticated){
-    //        navigate('/register')
-    //    }   
-    //}, [])
+    useEffect(() =>{
+        if(user){
+            isAuthenticated = true
+        }
+        //if(!isAuthenticated){
+        //    navigate('/register')
+        //}   
+    }, [])
      
     return (
         <Routes>

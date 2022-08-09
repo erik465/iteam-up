@@ -23,8 +23,7 @@ export const AuthProvider = ({children}) => {
     let [user, setUser] = useState(localStorage.getItem('authTokens') ? jwt_decode(localStorage.getItem('authTokens')) : null)
 
     let loginUser = async(e) => {
-        e.preventDefault()
-        let response = await fetch('http://127.0.0.1:8000/api/token/',
+        let response = await fetch('http://192.168.0.105:8000/api/token/',
         {
             method: 'POST',
             headers:{
@@ -38,7 +37,7 @@ export const AuthProvider = ({children}) => {
             setAuthTokens(data)
             setUser(jwt_decode(data.access))
             localStorage.setItem('authTokens', JSON.stringify(data))
-            navigate('/')
+            console.log('login successful')
         }else{
             alert('Something went wrong!')
         }
@@ -48,12 +47,14 @@ export const AuthProvider = ({children}) => {
         setAuthTokens(null)
         setUser(null)
         localStorage.removeItem('authTokens')
+        navigate('/')
     } 
 
     let contextData = {
         user:user,
         loginUser: loginUser,
-        logoutUser: logoutUser 
+        logoutUser: logoutUser ,
+        authTokens: authTokens
     };
 
     return(

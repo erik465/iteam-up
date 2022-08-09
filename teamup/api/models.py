@@ -16,8 +16,9 @@ User = get_user_model()
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     bio = models.CharField(max_length=100, null=False, blank=True)
-    uid = models.IntegerField(default=uuid.uuid4())
+    location = models.CharField(max_length=100, null=False, blank=True)
+    #uid = models.IntegerField(default=uuid.uuid4())
     profile_img = models.ImageField(upload_to='profile_images', default='blank_profile.webp')
 
     def __str__(self):
-        return self.user
+        return self.user.username

@@ -3,6 +3,7 @@ import Footer from './Footer'
 import ExplorePage from '../pages/ExplorePage'
 import Register from '../pages/Register'
 import Login from '../pages/Login'
+import ProfileSettings from '../pages/ProfileSettings'
 import ProfilePage from '../pages/ProfilePage'
 import {useState, useEffect} from 'react'
 import PrivateRoute from '../utilities/PrivateRoute'
@@ -19,12 +20,13 @@ function App() {
   return (
     <Router>
       <AuthProvider>      
-        <PrivateRoute path="/"  element={<ExplorePage />} exact/>
         <Header />
+        <PrivateRoute path="/"  element={<ExplorePage />} exact/>
         <Routes>
           <Route path="/:uid" element={<ProfilePage />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/login" element={<Login /> }/>
+          <Route path="/settings" element={<ProfileSettings/>}/>
         </Routes>
         <Footer />
       </AuthProvider>

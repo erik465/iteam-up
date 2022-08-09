@@ -1,20 +1,22 @@
 import React from 'react'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import {useNavigate} from 'react-router-dom'
 import AuthContext from '../context/AuthContext'
 
 
 function Register() {
   const navigate = useNavigate()
+  let { loginUser} = useContext(AuthContext)
+ 
   const [userObj, setUserObj] = useState({
     username:'', 
     email:'', 
     password:'',
     confirmPass:''
   })
+  
 
   const [error, setError] = useState('')
-  let {loginUser} = useContext(AuthContext)
 
   function validateForm(){
     if(userObj.username == ''){
@@ -49,11 +51,13 @@ function Register() {
   }
 
 
+
+
   let handleSubmit = async (e) => {
     e.preventDefault()
     if(validateForm()){
       if(userObj.password === userObj.confirmPass){
-        let response = await fetch("http://127.0.0.1:8000/api/users", {
+        let response = await fetch("http://192.168.0.105:8000/api/users", {
           method: 'POST',
           headers:{
             'Content-Type': 'application/json'
@@ -62,11 +66,14 @@ function Register() {
         })
         response = await response.json()
         setError(response.message)
+        console.log(response.message)
         if(response.message === "Successful register!"){
+          console.log('gunna login')
           loginUser(e)
-          setTimeout(navigate("/"), 1000)          
+          setTimeout(navigate('/settings'), 2000)
+          
         }
-         
+        
       }
       else{
         setError("Passwords do not match")

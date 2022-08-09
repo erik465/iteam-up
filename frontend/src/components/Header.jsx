@@ -14,14 +14,14 @@ function Header() {
           <img src='team.png' alt="team" className="header--logo--img" />
         </div>
         <div className="header--links">
-          <a href={`${user.name}/profile`}>Me</a>
+          <a href={`${user?.name}/profile`}>Me</a>
           <a>Explore</a>
           <a>Friends</a>
           <a>Contacts 🤔</a>
         </div>    
 
         <div className="header--profile">
-            {user ? <p>Welcome, {user.name}</p> : <a href="/login">Log in</a>}
+            {user ? <p>Welcome, {user?.name}</p> : <a href="/login">Log in</a>}
             {user && <p onClick={logoutUser} style={styles}>Logout</p>}
         </div>   
         

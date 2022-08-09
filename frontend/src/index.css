@@ -172,35 +172,7 @@ hr{
 }
 
 
-.register{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 10%;
-    padding-top:3%;
-    background: #d2895f;
-}
 
-.register--content{
-    width: 60%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.register--content form{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 550px;
-    width: 100%;
-    background: #eee;
-    padding: 20px;
-    border-radius:20px;
-    margin-bottom: 16%;
-    margin-top: 5%;
-}
 
 .login--content{
     width: 60%;
@@ -235,6 +207,36 @@ hr{
 .login--content input[type="submit"]{
     background: #d2895f;
     color: #eee;
+}
+
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+    padding-top:3%;
+    background: #d2895f;
+}
+
+.register--content{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register--content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 550px;
+    width: 100%;
+    background: #eee;
+    padding: 20px;
+    border-radius:20px;
+    margin-bottom: 16%;
+    margin-top: 5%;
 }
 
 .register--content input{
@@ -279,6 +281,80 @@ hr{
     width: 120px;
     transition:1s;
 }
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10%;
+    padding-top:3%;
+    background: #d2895f;
+}
+
+.settings--content{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings--content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    width: 100%;
+    background: #eee;
+    padding: 20px;
+    border-radius:20px;
+    margin-bottom: 16%;
+    margin-top: 5%;
+}
+
+.settings--content input{
+    border: none;
+    border-radius: 5px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    transition:0.5s;
+    padding: 10px;
+}
+
+.settings--content input[type="submit"]{
+    background: #d2895f;
+    color: #eee;
+}
+
+.settings--content input:hover{
+    box-shadow: 10px 10px 10px rgb(72, 71, 71);
+}
+
+.settings--logo{
+    border-radius: 90px;
+    box-shadow: 10px 10px 10px #000;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    width: 25%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition:1s;
+}
+
+.settings--logo h1{
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.settings--logo img{
+    height: 120px;
+    width: 120px;
+    transition:1s;
+}
+
 
 .error{
     color: rgb(229, 45, 45);
