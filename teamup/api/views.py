@@ -93,23 +93,25 @@ def profileView(request):
         data = request.data
         bio = data['bio']
         location = data['location']
-        profile_img = data['profile_img']
+        #profile_img = data['profile_img']
         if Profile.objects.filter(user=request.user).exists():
             return Response('user already exists')
         
         else:
-            new_profile = Profile.objects.create(user=request.user, bio=bio, location=location, profile_img=profile_img)
+            new_profile = Profile.objects.create(user=request.user, bio=bio, location=location)
             new_profile.save()
             profile_Serializer = ProfileSerializer(instance=new_profile, many=False)
             return Response(profile_Serializer.data)
         
     elif request.method == 'PUT':
+        #print('FILES : ' + str(request.FILES))
         data = request.data
         profile = Profile.objects.get(user=request.user)
         profile_Serializer = ProfileSerializer(profile, data=data)
 
         if profile_Serializer.is_valid():
             profile_Serializer.save()
+            print(profile_Serializer.data)
         
         return Response(profile_Serializer.data)
 

@@ -1,14 +1,17 @@
 import React from 'react'
 import {useState, useContext, useEffect} from 'react'
 import AuthContext from '../context/AuthContext'
+import Cookies from 'js-cookie'
 
 function ProfileSettings() {
   let {user, authTokens} = useContext(AuthContext)
+  const csrftoken = Cookies.get('csrftoken');
+
 
   const [settingsObj, setSettingsObj] = useState({
     bio : '',
     location: '',
-    profile_img:null,
+    //profile_img:null,
   })
 
   let createProfile = async () => {
@@ -31,6 +34,7 @@ function ProfileSettings() {
   
 
   function handleChange(event){
+    //e.preventDefault()
     console.log('handle change')
     let {name, value} = event.target
 
@@ -42,21 +46,16 @@ function ProfileSettings() {
 
   }
 
-  function handleSubmit(event){
-    event.preventDefault()
-    console.log('settings submit')
-    async () => {
-      let response = await fetch("http://192.168.0.105:8000/api/profile", {
-        method: 'PUT',
-        headers: {
-          'Content-Type':'application/json',
-          'Authorization': 'Bearer ' + String(authTokens.access)
-        },
-        body:JSON.stringify(settingsObj)
-      })
-      let data = await response.json()
-      console.log(data)
-    }
+  function handleSubmit(e){
+    console.log('settings submit, PUT METHOD')
+    fetch("http://192.168.0.105:8000/api/profile", {
+      method: "PUT",
+      headers: {
+        'Content-Type':'application/json',
+        'Authorization': 'Bearer ' + String(authTokens.access),
+      },
+      body:JSON.stringify(settingsObj)
+    })
   }
 
 
@@ -67,11 +66,11 @@ function ProfileSettings() {
                 <img src="team.png" alt="" />
                 <h1>ITeam Up</h1>
             </div>
-            <form action="" method="post" onSubmit={(e) => handleSubmit}>
+            <form action="" onSubmit={handleSubmit}>
                 <input type="text" onChange={handleChange} name="bio" placeholder="Bio"/>
                 <input type="text" onChange={handleChange} name="location"placeholder="Location"/>
-                <input type="file" onChange={handleChange} name="profile_img" accept="image/*"/>
-                <input type="submit" value="Submit" onClick={handleSubmit}/>
+                {/*<input type="file" onChange={handleChange} name="profile_img" accept="image/*"/>*/}
+                <input type="submit" value="Submit"/>
             </form>
         </div>
         
